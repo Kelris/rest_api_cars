@@ -78,18 +78,19 @@ WSGI_APPLICATION = 'rest_api_cars.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'db.REST_API_TASK',
-    #     'USER': os.environ['USER_postgresql'],
-    #     'PASSWORD': os.environ['PASSWORD_postgresql'],
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db.rest_api_cars',
+        'USER': os.environ['USER_postgresql'],
+        'PASSWORD': os.environ['PASSWORD_postgresql'],
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = db_from_env
+# Database for heroku:
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'] = db_from_env
 
 
 # Password validation
